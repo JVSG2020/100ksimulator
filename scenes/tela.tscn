@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://b4png800wfjsb"]
+
+[node name="tela" type="Node2D"]
+position = Vector2(0, 1)
