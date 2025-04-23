@@ -1,12 +1,317 @@
-[gd_scene format=3 uid="uid://cfxybseexbl31"]
+[gd_scene load_steps=5 format=3 uid="uid://cfxybseexbl31"]
+
+[ext_resource type="Texture2D" uid="uid://cjts5wq5m1idk" path="res://Scenes/tela/Screenshot_1.png" id="1_c7pch"]
+[ext_resource type="Texture2D" uid="uid://dulrlmpabcub1" path="res://icon_100.png" id="2_t811e"]
+
+[sub_resource type="SystemFont" id="SystemFont_nwsox"]
+
+[sub_resource type="Theme" id="Theme_8we33"]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Screenshot1" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.843956, 0.84485)
+texture = ExtResource("1_c7pch")
+
+[node name="Icon100" type="Sprite2D" parent="."]
+position = Vector2(29.5, 21.5)
+scale = Vector2(0.0297357, 0.0297357)
+texture = ExtResource("2_t811e")
+
 [node name="Label" type="Label" parent="."]
-offset_left = 301.0
-offset_top = 137.0
-offset_right = 756.0
-offset_bottom = 290.0
-rotation = -0.0235062
-theme_override_font_sizes/font_size = 100
-text = "Tela em breve"
+offset_left = 53.0
+offset_top = 2.0
+offset_right = 126.0
+offset_bottom = 33.0
+theme_override_fonts/font = SubResource("SystemFont_nwsox")
+theme_override_font_sizes/font_size = 23
+text = "100K-1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 969.0
+offset_top = 10.0
+offset_right = 1036.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 11
+text = "Arquivos"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1053.0
+offset_top = 10.0
+offset_right = 1137.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 11
+text = "Informações"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 954.0
+offset_top = 301.0
+offset_right = 1005.0
+offset_bottom = 335.0
+theme_override_font_sizes/font_size = 11
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 1014.0
+offset_top = 301.0
+offset_right = 1065.0
+offset_bottom = 335.0
+theme_override_font_sizes/font_size = 11
+text = "Stop"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 1073.0
+offset_top = 301.0
+offset_right = 1124.0
+offset_bottom = 335.0
+theme_override_font_sizes/font_size = 11
+text = "Step"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 969.0
+offset_top = 10.0
+offset_right = 1036.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 11
+text = "Arquivos"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 959.0
+offset_top = 390.0
+offset_right = 1009.0
+offset_bottom = 424.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 9.0
+offset_right = 61.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 12
+text = "A"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1014.0
+offset_top = 390.0
+offset_right = 1064.0
+offset_bottom = 424.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 9.0
+offset_right = 61.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 12
+text = "S"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control4" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1014.0
+offset_top = 352.0
+offset_right = 1064.0
+offset_bottom = 386.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control4"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 12
+text = "W"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control5" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 984.0
+offset_top = 445.0
+offset_right = 1034.0
+offset_bottom = 479.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control5"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 7.0
+offset_right = 61.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 12
+text = "T"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control6" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1043.0
+offset_top = 445.0
+offset_right = 1093.0
+offset_bottom = 479.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control6"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 7.0
+offset_right = 61.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 12
+text = "Y"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control7" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1043.0
+offset_top = 495.0
+offset_right = 1093.0
+offset_bottom = 529.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control7"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 7.0
+offset_right = 61.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 12
+text = "K"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control8" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 984.0
+offset_top = 495.0
+offset_right = 1034.0
+offset_bottom = 529.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control8"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 7.0
+offset_right = 65.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 12
+text = "J"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1069.0
+offset_top = 390.0
+offset_right = 1119.0
+offset_bottom = 424.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control3"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 9.0
+offset_right = 61.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 12
+text = "D"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 943.0
+offset_top = 226.0
+offset_right = 1086.0
+offset_bottom = 249.0
+theme_override_font_sizes/font_size = 14
+text = "Instruções/seg"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 944.0
+offset_top = 169.0
+offset_right = 1087.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 15
+text = "Progama count: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 943.0
+offset_top = 257.0
+offset_right = 1086.0
+offset_bottom = 280.0
+theme_override_font_sizes/font_size = 14
+text = "Rate: 30"
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 943.0
+offset_top = 243.0
+offset_right = 1132.0
+offset_bottom = 259.0
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 9.0
+offset_top = 51.0
+offset_right = 917.0
+offset_bottom = 632.0
+theme_override_constants/h_separation = 96
+theme_override_constants/v_separation = 48
+columns = 40
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 334.0
+offset_top = 5.0
+offset_right = 490.0
+offset_bottom = 37.0
+theme_override_fonts/font = SubResource("SystemFont_nwsox")
+theme_override_font_sizes/font_size = 23
+text = "000"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 154.0
+offset_top = 1.0
+offset_right = 310.0
+offset_bottom = 33.0
+theme_override_fonts/font = SubResource("SystemFont_nwsox")
+theme_override_font_sizes/font_size = 23
+text = "---------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" type="Container" parent="."]
+offset_left = -166.502
+offset_top = -169.054
+offset_right = -126.502
+offset_bottom = -129.054

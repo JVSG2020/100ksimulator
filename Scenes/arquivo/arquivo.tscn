@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://cjbfvnwu8wmgl"]
+[gd_scene load_steps=2 format=3 uid="uid://cjbfvnwu8wmgl"]
+
+[ext_resource type="Texture2D" uid="uid://cnkgynrgpmv16" path="res://Scenes/arquivo/Screenshot_2.png" id="1_sxp7h"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Screenshot2" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.843956, 0.84485)
+texture = ExtResource("1_sxp7h")
