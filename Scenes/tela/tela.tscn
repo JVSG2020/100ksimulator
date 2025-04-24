@@ -1,53 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfxybseexbl31"]
+[gd_scene load_steps=6 format=3 uid="uid://cfxybseexbl31"]
 
 [ext_resource type="Texture2D" uid="uid://cjts5wq5m1idk" path="res://Scenes/tela/Screenshot_1.png" id="1_c7pch"]
 [ext_resource type="Texture2D" uid="uid://dulrlmpabcub1" path="res://icon_100.png" id="2_t811e"]
 
-[sub_resource type="SystemFont" id="SystemFont_nwsox"]
-
 [sub_resource type="Theme" id="Theme_8we33"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t811e"]
+bg_color = Color(0.180392, 0.184314, 0.247059, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_nwsox"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 650.0
+color = Color(0.117647, 0.121569, 0.184314, 1)
 
 [node name="Screenshot1" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
+position = Vector2(1802, 324)
 scale = Vector2(0.843956, 0.84485)
 texture = ExtResource("1_c7pch")
 
-[node name="Icon100" type="Sprite2D" parent="."]
-position = Vector2(29.5, 21.5)
-scale = Vector2(0.0297357, 0.0297357)
-texture = ExtResource("2_t811e")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 53.0
-offset_top = 2.0
-offset_right = 126.0
-offset_bottom = 33.0
-theme_override_fonts/font = SubResource("SystemFont_nwsox")
-theme_override_font_sizes/font_size = 23
-text = "100K-1"
-metadata/_edit_use_anchors_ = true
-
-[node name="Button" type="Button" parent="."]
-offset_left = 969.0
-offset_top = 10.0
-offset_right = 1036.0
-offset_bottom = 34.0
-theme_override_font_sizes/font_size = 11
-text = "Arquivos"
-metadata/_edit_use_anchors_ = true
-
-[node name="Button2" type="Button" parent="."]
-offset_left = 1053.0
-offset_top = 10.0
-offset_right = 1137.0
-offset_bottom = 34.0
-theme_override_font_sizes/font_size = 11
-text = "Informações"
-metadata/_edit_use_anchors_ = true
-
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 954.0
 offset_top = 301.0
 offset_right = 1005.0
@@ -57,6 +42,7 @@ text = "Start"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button4" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1014.0
 offset_top = 301.0
 offset_right = 1065.0
@@ -66,21 +52,13 @@ text = "Stop"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button5" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1073.0
 offset_top = 301.0
 offset_right = 1124.0
 offset_bottom = 335.0
 theme_override_font_sizes/font_size = 11
 text = "Step"
-metadata/_edit_use_anchors_ = true
-
-[node name="Button6" type="Button" parent="."]
-offset_left = 969.0
-offset_top = 10.0
-offset_right = 1036.0
-offset_bottom = 34.0
-theme_override_font_sizes/font_size = 11
-text = "Arquivos"
 metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="."]
@@ -244,6 +222,7 @@ text = "D"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 943.0
 offset_top = 226.0
 offset_right = 1086.0
@@ -253,6 +232,7 @@ text = "Instruções/seg"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="."]
+layout_mode = 0
 offset_left = 944.0
 offset_top = 169.0
 offset_right = 1087.0
@@ -262,6 +242,7 @@ text = "Progama count: 0"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 943.0
 offset_top = 257.0
 offset_right = 1086.0
@@ -271,6 +252,7 @@ text = "Rate: 30"
 metadata/_edit_use_anchors_ = true
 
 [node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 943.0
 offset_top = 243.0
 offset_right = 1132.0
@@ -281,6 +263,7 @@ value = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 51.0
 offset_right = 917.0
@@ -290,28 +273,105 @@ theme_override_constants/v_separation = 48
 columns = 40
 metadata/_edit_use_anchors_ = true
 
-[node name="Label5" type="Label" parent="."]
-offset_left = 334.0
-offset_top = 5.0
-offset_right = 490.0
-offset_bottom = 37.0
+[node name="cabeca" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="cabeca"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t811e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="cabeca/Panel"]
+clip_contents = true
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 42.0
+size_flags_vertical = 5
+size_flags_stretch_ratio = 13.73
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="cabeca/Panel/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 13.73
+
+[node name="Label" type="Label" parent="cabeca/Panel/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
 theme_override_fonts/font = SubResource("SystemFont_nwsox")
 theme_override_font_sizes/font_size = 23
-text = "000"
+text = "        "
 metadata/_edit_use_anchors_ = true
 
-[node name="Label6" type="Label" parent="."]
-offset_left = 154.0
-offset_top = 1.0
-offset_right = 310.0
-offset_bottom = 33.0
+[node name="Label2" type="Label" parent="cabeca/Panel/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("SystemFont_nwsox")
+theme_override_font_sizes/font_size = 23
+text = "100K-1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon100" type="Sprite2D" parent="cabeca/Panel/HBoxContainer/HBoxContainer2"]
+position = Vector2(29.5, 20.5)
+scale = Vector2(0.0275331, 0.0275331)
+texture = ExtResource("2_t811e")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="cabeca/Panel/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 13.73
+
+[node name="Label6" type="Label" parent="cabeca/Panel/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
 theme_override_fonts/font = SubResource("SystemFont_nwsox")
 theme_override_font_sizes/font_size = 23
 text = "---------------------"
 metadata/_edit_use_anchors_ = true
 
-[node name="Container" type="Container" parent="."]
-offset_left = -166.502
-offset_top = -169.054
-offset_right = -126.502
-offset_bottom = -129.054
+[node name="Label7" type="Label" parent="cabeca/Panel/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_nwsox")
+theme_override_font_sizes/font_size = 23
+text = "000"
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="cabeca/Panel/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 13.73
+
+[node name="CameraSetting" type="CheckBox" parent="cabeca/Panel/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+button_pressed = true
+text = "Follow Assembly"
+
+[node name="FullscreenSetting" type="CheckBox" parent="cabeca/Panel/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Fullscreen"
+
+[node name="Button" type="Button" parent="cabeca/Panel/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Arquivos"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="cabeca/Panel/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 11
+text = "Informações"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="toggled" from="cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" to="cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" method="Toggle"]
