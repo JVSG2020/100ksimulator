@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="100ksimulator"
-run/main_scene="res://Scenes/introducao/introducao.tscn"
+run/main_scene="uid://bw5s4jj1w1mtc"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [dotnet]
 
