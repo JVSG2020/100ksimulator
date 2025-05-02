@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="100ksimulator"
-run/main_scene="uid://bw5s4jj1w1mtc"
+run/main_scene="uid://cfxybseexbl31"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[autoload]
+
+SignalManeger="*res://Scripts/singletons/signal_maneger.gd"
 
 [dotnet]
 
