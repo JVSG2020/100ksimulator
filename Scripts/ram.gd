@@ -58,7 +58,7 @@ func _process(_delta):
 	SignalManeger.cam_info.connect(func(): curscene = "info") # Informações
 	SignalManeger.cam_arq.connect(func(): curscene = "arq") # Arquivos
 	# Teste
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_just_pressed("ui_down") and curscene == "info":
 		ramload(0,get_address(0) + 5)
 	
 
@@ -71,5 +71,5 @@ func ramload(m,n):
 	label.text = "Ram " + str(m) + " : " + str(n)
 
 # Função para retornar um registrador
-func get_address(m):
+func get_address(m: int):
 	return ramlist[m]

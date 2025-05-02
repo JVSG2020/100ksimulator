@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 SignalManeger="*res://Scripts/singletons/signal_maneger.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="100ksimulator"

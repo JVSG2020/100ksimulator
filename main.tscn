@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://cfxybseexbl31"]
+[gd_scene load_steps=24 format=3 uid="uid://cfxybseexbl31"]
 
 [ext_resource type="Script" uid="uid://cybxik6ie6di2" path="res://Scripts/mainscript.gd" id="1_5vw27"]
 [ext_resource type="Texture2D" uid="uid://cjts5wq5m1idk" path="res://Screenshot_1.png" id="1_272bh"]
+[ext_resource type="Script" uid="uid://cxr2g1xayiv3j" path="res://Scripts/ui_tela.gd" id="2_4c57u"]
 [ext_resource type="Texture2D" uid="uid://f6kv62cqlpri" path="res://icon_100.png" id="2_5vw27"]
 [ext_resource type="Script" uid="uid://dlk0rnhqjotr8" path="res://Scripts/tela_informacoes.gd" id="3_kek77"]
 [ext_resource type="Texture2D" uid="uid://d06ykvtsqxt7" path="res://Screenshot_3.png" id="4_4c57u"]
@@ -116,6 +117,7 @@ script = ExtResource("1_5vw27")
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+script = ExtResource("2_4c57u")
 
 [node name="ColorRect" type="ColorRect" parent="UI-Tela"]
 layout_mode = 0
@@ -129,7 +131,7 @@ position = Vector2(1802, 324)
 scale = Vector2(0.843956, 0.84485)
 texture = ExtResource("1_272bh")
 
-[node name="Button3" type="Button" parent="UI-Tela"]
+[node name="Start" type="Button" parent="UI-Tela"]
 layout_mode = 0
 offset_left = 954.0
 offset_top = 301.0
@@ -139,7 +141,7 @@ theme_override_font_sizes/font_size = 11
 text = "Start"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button4" type="Button" parent="UI-Tela"]
+[node name="Stop" type="Button" parent="UI-Tela"]
 layout_mode = 0
 offset_left = 1014.0
 offset_top = 301.0
@@ -149,7 +151,7 @@ theme_override_font_sizes/font_size = 11
 text = "Stop"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button5" type="Button" parent="UI-Tela"]
+[node name="Step" type="Button" parent="UI-Tela"]
 layout_mode = 0
 offset_left = 1073.0
 offset_top = 301.0
@@ -159,10 +161,13 @@ theme_override_font_sizes/font_size = 11
 text = "Step"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" type="Control" parent="UI-Tela"]
+[node name="Control" type="Panel" parent="UI-Tela"]
 layout_mode = 1
-anchor_left = 0.00260417
-anchor_right = 0.00260417
+anchors_preset = -1
+anchor_left = -0.00251389
+anchor_top = -0.0123457
+anchor_right = -0.00251389
+anchor_bottom = -0.0123457
 offset_left = 961.896
 offset_top = 390.0
 offset_right = 1011.9
@@ -180,10 +185,13 @@ theme_override_font_sizes/font_size = 12
 text = "A"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control2" type="Control" parent="UI-Tela"]
+[node name="Control2" type="Panel" parent="UI-Tela"]
 layout_mode = 1
-anchor_left = 0.00260417
-anchor_right = 0.00260417
+anchors_preset = -1
+anchor_left = -0.00251389
+anchor_top = -0.0123457
+anchor_right = -0.00251389
+anchor_bottom = -0.0123457
 offset_left = 1016.9
 offset_top = 390.0
 offset_right = 1066.9
@@ -201,10 +209,13 @@ theme_override_font_sizes/font_size = 12
 text = "S"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control4" type="Control" parent="UI-Tela"]
+[node name="Control4" type="Panel" parent="UI-Tela"]
 layout_mode = 1
-anchor_left = 0.00260417
-anchor_right = 0.00260417
+anchors_preset = -1
+anchor_left = -0.00251389
+anchor_top = -0.0123457
+anchor_right = -0.00251389
+anchor_bottom = -0.0123457
 offset_left = 1016.9
 offset_top = 352.0
 offset_right = 1066.9
@@ -222,9 +233,13 @@ theme_override_font_sizes/font_size = 12
 text = "W"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control3" type="Control" parent="UI-Tela"]
-layout_mode = 3
-anchors_preset = 0
+[node name="Control3" type="Panel" parent="UI-Tela"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.000777774
+anchor_top = -0.0123457
+anchor_right = -0.000777774
+anchor_bottom = -0.0123457
 offset_left = 1069.0
 offset_top = 390.0
 offset_right = 1119.0
@@ -249,7 +264,7 @@ offset_top = 226.0
 offset_right = 1086.0
 offset_bottom = 249.0
 theme_override_font_sizes/font_size = 14
-text = "Instruções/seg"
+text = "Instruções por Segundo"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="UI-Tela"]
@@ -259,10 +274,10 @@ offset_top = 169.0
 offset_right = 1087.0
 offset_bottom = 192.0
 theme_override_font_sizes/font_size = 15
-text = "Instrução Atual: 0"
+text = "Instrução do PC: 0"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="UI-Tela"]
+[node name="Rate" type="Label" parent="UI-Tela"]
 layout_mode = 0
 offset_left = 943.0
 offset_top = 257.0
