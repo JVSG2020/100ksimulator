@@ -60,6 +60,7 @@ func _process(_delta):
 	# Um teste
 	if Input.is_action_just_pressed("ui_up") and curscene == "info":
 		regload(1,get_register(1) + 3)
+	# O registrador 0 é sempre 0, então :
 	regload(0, 0)
 
 # Função para modificar um registrador

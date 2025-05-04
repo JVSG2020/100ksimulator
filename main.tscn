@@ -1,14 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://cfxybseexbl31"]
+[gd_scene load_steps=23 format=3 uid="uid://cfxybseexbl31"]
 
 [ext_resource type="Script" uid="uid://cybxik6ie6di2" path="res://Scripts/mainscript.gd" id="1_5vw27"]
-[ext_resource type="Texture2D" uid="uid://cjts5wq5m1idk" path="res://Screenshot_1.png" id="1_272bh"]
-[ext_resource type="Script" uid="uid://cxr2g1xayiv3j" path="res://Scripts/ui_tela.gd" id="2_4c57u"]
+[ext_resource type="Texture2D" uid="uid://bes41m3nm8u4a" path="res://Screenshot_1.png" id="1_272bh"]
 [ext_resource type="Texture2D" uid="uid://f6kv62cqlpri" path="res://icon_100.png" id="2_5vw27"]
-[ext_resource type="Script" uid="uid://dlk0rnhqjotr8" path="res://Scripts/tela_informacoes.gd" id="3_kek77"]
-[ext_resource type="Texture2D" uid="uid://d06ykvtsqxt7" path="res://Screenshot_3.png" id="4_4c57u"]
+[ext_resource type="Texture2D" uid="uid://banjf0uu0qxlr" path="res://Screenshot_3.png" id="4_4c57u"]
 [ext_resource type="Script" uid="uid://dtw56ea6ym5gs" path="res://Scripts/ram.gd" id="5_efxa6"]
 [ext_resource type="Script" uid="uid://m3ce1m7uqnow" path="res://Scripts/regs.gd" id="6_dg77c"]
-[ext_resource type="Texture2D" uid="uid://bqm6odsj724o4" path="res://Screenshot_1 (2).png" id="7_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://bo852ml0mw1n6" path="res://Screenshot_2.png" id="8_kek77"]
 [ext_resource type="Script" uid="uid://bupp7q04bjqw1" path="res://Scripts/ui_abertura.gd" id="9_kek77"]
 
 [sub_resource type="Theme" id="Theme_8we33"]
@@ -18,16 +16,24 @@ bg_color = Color(0.180392, 0.184314, 0.247059, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_nwsox"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c57u"]
+bg_color = Color(0.787542, 2.69532e-06, 2.88785e-07, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.421331, 0.025928, 0.025916, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y5iv"]
 bg_color = Color(0.180392, 0.184314, 0.247059, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_io28c"]
-
-[sub_resource type="GDScript" id="GDScript_moneo"]
-script/source = "extends Button
-
-func _on_pressed(): SignalManeger.cam_tela.emit()
-"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xtop"]
 bg_color = Color(0.0768, 0.07968, 0.12, 1)
@@ -114,10 +120,10 @@ grow_vertical = 2
 script = ExtResource("1_5vw27")
 
 [node name="UI-Tela" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-script = ExtResource("2_4c57u")
 
 [node name="ColorRect" type="ColorRect" parent="UI-Tela"]
 layout_mode = 0
@@ -161,55 +167,7 @@ theme_override_font_sizes/font_size = 11
 text = "Step"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control" type="Panel" parent="UI-Tela"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.00251389
-anchor_top = -0.0123457
-anchor_right = -0.00251389
-anchor_bottom = -0.0123457
-offset_left = 961.896
-offset_top = 390.0
-offset_right = 1011.9
-offset_bottom = 424.0
-theme = SubResource("Theme_8we33")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="UI-Tela/Control"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 9.0
-offset_right = 61.0
-offset_bottom = 32.0
-theme_override_font_sizes/font_size = 12
-text = "A"
-metadata/_edit_use_anchors_ = true
-
-[node name="Control2" type="Panel" parent="UI-Tela"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.00251389
-anchor_top = -0.0123457
-anchor_right = -0.00251389
-anchor_bottom = -0.0123457
-offset_left = 1016.9
-offset_top = 390.0
-offset_right = 1066.9
-offset_bottom = 424.0
-theme = SubResource("Theme_8we33")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="UI-Tela/Control2"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 9.0
-offset_right = 61.0
-offset_bottom = 32.0
-theme_override_font_sizes/font_size = 12
-text = "S"
-metadata/_edit_use_anchors_ = true
-
-[node name="Control4" type="Panel" parent="UI-Tela"]
+[node name="ControlW" type="Panel" parent="UI-Tela"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.00251389
@@ -223,7 +181,7 @@ offset_bottom = 386.0
 theme = SubResource("Theme_8we33")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="UI-Tela/Control4"]
+[node name="Label" type="Label" parent="UI-Tela/ControlW"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 8.0
@@ -233,7 +191,55 @@ theme_override_font_sizes/font_size = 12
 text = "W"
 metadata/_edit_use_anchors_ = true
 
-[node name="Control3" type="Panel" parent="UI-Tela"]
+[node name="ControlA" type="Panel" parent="UI-Tela"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00251389
+anchor_top = -0.0123457
+anchor_right = -0.00251389
+anchor_bottom = -0.0123457
+offset_left = 961.896
+offset_top = 390.0
+offset_right = 1011.9
+offset_bottom = 424.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UI-Tela/ControlA"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 9.0
+offset_right = 61.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 12
+text = "A"
+metadata/_edit_use_anchors_ = true
+
+[node name="ControlS" type="Panel" parent="UI-Tela"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00251389
+anchor_top = -0.0123457
+anchor_right = -0.00251389
+anchor_bottom = -0.0123457
+offset_left = 1016.9
+offset_top = 390.0
+offset_right = 1066.9
+offset_bottom = 424.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UI-Tela/ControlS"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 9.0
+offset_right = 61.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 12
+text = "S"
+metadata/_edit_use_anchors_ = true
+
+[node name="ControlD" type="Panel" parent="UI-Tela"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.000777774
@@ -247,7 +253,7 @@ offset_bottom = 424.0
 theme = SubResource("Theme_8we33")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="UI-Tela/Control3"]
+[node name="Label" type="Label" parent="UI-Tela/ControlD"]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 9.0
@@ -257,7 +263,7 @@ theme_override_font_sizes/font_size = 12
 text = "D"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="UI-Tela"]
+[node name="InstrucoesPorSegs" type="Label" parent="UI-Tela"]
 layout_mode = 0
 offset_left = 943.0
 offset_top = 226.0
@@ -267,7 +273,7 @@ theme_override_font_sizes/font_size = 14
 text = "Instruções por Segundo"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label4" type="Label" parent="UI-Tela"]
+[node name="InstrucoesdoPC" type="Label" parent="UI-Tela"]
 layout_mode = 0
 offset_left = 944.0
 offset_top = 169.0
@@ -287,7 +293,7 @@ theme_override_font_sizes/font_size = 14
 text = "Rate: 1"
 metadata/_edit_use_anchors_ = true
 
-[node name="HSlider" type="HSlider" parent="UI-Tela"]
+[node name="RateSlider" type="HSlider" parent="UI-Tela"]
 layout_mode = 0
 offset_left = 943.0
 offset_top = 243.0
@@ -295,7 +301,7 @@ offset_right = 1132.0
 offset_bottom = 259.0
 min_value = 1.0
 max_value = 10000.0
-value = 1.0
+value = 400.0
 metadata/_edit_use_anchors_ = true
 
 [node name="GridContainer" type="GridContainer" parent="UI-Tela"]
@@ -334,7 +340,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 13.73
 
-[node name="Label" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer2"]
+[node name="Espaco" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
@@ -343,7 +349,7 @@ theme_override_font_sizes/font_size = 23
 text = "        "
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer2"]
+[node name="Titulo" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
@@ -365,19 +371,41 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 size_flags_stretch_ratio = 13.73
 
-[node name="Label6" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer"]
+[node name="PanelChar" type="Panel" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+
+[node name="CharacterDisplay" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer/PanelChar"]
+layout_mode = 2
+anchor_left = -0.02
+anchor_right = 0.2
+offset_left = 4.0
+offset_right = 160.0
+offset_bottom = 32.0
 size_flags_horizontal = 6
 theme_override_fonts/font = SubResource("SystemFont_nwsox")
 theme_override_font_sizes/font_size = 23
 text = "---------------------"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label7" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer"]
+[node name="PanelNumb" type="Panel" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 30)
 layout_mode = 2
+
+[node name="NumberDisplay" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer/PanelNumb"]
+layout_mode = 2
+anchor_left = 0.628571
+anchor_top = -0.0666667
+anchor_right = 1.07143
+anchor_bottom = -0.0666667
+offset_left = -43.0
+offset_right = -5.0
+offset_bottom = 32.0
 theme_override_fonts/font = SubResource("SystemFont_nwsox")
 theme_override_font_sizes/font_size = 23
-text = "000"
+text = "0000"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="UI-Tela/cabeca/Panel/HBoxContainer"]
@@ -386,21 +414,25 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 size_flags_stretch_ratio = 13.73
+theme_override_constants/separation = 4
 
 [node name="espaço" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_nwsox")
 theme_override_font_sizes/font_size = 23
-text = "                                              "
+text = "                                            "
 metadata/_edit_use_anchors_ = true
 
 [node name="FullscreenSetting" type="CheckBox" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
 theme_override_font_sizes/font_size = 8
 text = "Fullscreen"
 
 [node name="tela-arquivos" type="Button" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
 theme_override_font_sizes/font_size = 11
 text = "Arquivos"
 metadata/_edit_use_anchors_ = true
@@ -408,11 +440,24 @@ metadata/_edit_use_anchors_ = true
 [node name="tela-informacoes" type="Button" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
 theme_override_font_sizes/font_size = 11
 action_mode = 0
 text = "Informações"
-script = ExtResource("3_kek77")
 metadata/_edit_use_anchors_ = true
+
+[node name="X" type="Button" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c57u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5vw27")
+text = "x"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
 
 [node name="CameraTela" type="Camera2D" parent="UI-Tela"]
 position = Vector2(576, 324)
@@ -507,6 +552,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 size_flags_stretch_ratio = 15.95
+theme_override_constants/separation = 4
 
 [node name="FullscreenSetting" type="CheckBox" parent="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3"]
 layout_mode = 2
@@ -514,34 +560,36 @@ theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
 theme_override_font_sizes/font_size = 8
 text = "Fullscreen"
 
-[node name="Label3" type="Label" parent="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "   "
-
-[node name="Button" type="Button" parent="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+[node name="informacoes-arquivos" type="Button" parent="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
 theme_override_font_sizes/font_size = 11
 text = "Arquivos"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "   "
-
 [node name="informacao-tela" type="Button" parent="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
 theme_override_font_sizes/font_size = 11
 action_mode = 0
 text = "Tela"
-script = SubResource("GDScript_moneo")
+metadata/_edit_use_anchors_ = true
+
+[node name="X" type="Button" parent="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c57u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5vw27")
+text = "x"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3"]
 layout_mode = 2
-text = "    "
 
 [node name="Flags" type="Panel" parent="UI-Informacoes"]
 layout_mode = 0
@@ -668,18 +716,128 @@ position = Vector2(576, 324)
 
 [node name="UI-Arquivos" type="Control" parent="."]
 anchors_preset = 0
-offset_left = -6.0
 offset_top = 1412.0
-offset_right = 1146.0
+offset_right = 1152.0
 offset_bottom = 2060.0
 
-[node name="Screenshot1(2)" type="Sprite2D" parent="UI-Arquivos"]
-position = Vector2(575.9, 324)
-scale = Vector2(0.600218, 0.600443)
-texture = ExtResource("7_ycdy4")
+[node name="Screenshot2" type="Sprite2D" parent="UI-Arquivos"]
+position = Vector2(576, 324.5)
+scale = Vector2(0.844, 0.845)
+texture = ExtResource("8_kek77")
 
 [node name="CameraArquivos" type="Camera2D" parent="UI-Arquivos"]
 position = Vector2(576, 324)
+
+[node name="cabeca" type="MarginContainer" parent="UI-Arquivos"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="UI-Arquivos/cabeca"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7y5iv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI-Arquivos/cabeca/Panel"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 5
+size_flags_stretch_ratio = 13.73
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI-Arquivos/cabeca/Panel/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 13.73
+
+[node name="Espaço" type="Label" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("SystemFont_io28c")
+theme_override_font_sizes/font_size = 23
+text = "        "
+metadata/_edit_use_anchors_ = true
+
+[node name="Título" type="Label" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
+theme_override_fonts/font = SubResource("SystemFont_io28c")
+theme_override_font_sizes/font_size = 23
+text = "100K-1"
+metadata/_edit_use_anchors_ = true
+
+[node name="EditorAssembly" type="Label" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
+theme_override_fonts/font = SubResource("SystemFont_io28c")
+theme_override_font_sizes/font_size = 21
+text = "Editor Assembly"
+metadata/_edit_use_anchors_ = true
+
+[node name="Icon100" type="Sprite2D" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer2"]
+position = Vector2(29.5, 20.5)
+scale = Vector2(0.0275331, 0.0275331)
+texture = ExtResource("2_5vw27")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI-Arquivos/cabeca/Panel/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+size_flags_stretch_ratio = 15.95
+theme_override_constants/separation = 4
+
+[node name="FullscreenSetting" type="CheckBox" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
+theme_override_font_sizes/font_size = 8
+text = "Fullscreen"
+
+[node name="arquivo-tela" type="Button" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
+theme_override_font_sizes/font_size = 11
+text = "Tela"
+metadata/_edit_use_anchors_ = true
+
+[node name="arquivos-informacao" type="Button" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.807843, 0.709804, 0.670588, 1)
+theme_override_font_sizes/font_size = 11
+action_mode = 0
+text = "Informações"
+metadata/_edit_use_anchors_ = true
+
+[node name="X" type="Button" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 16
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c57u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5vw27")
+text = "x"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
 
 [node name="UI-Abertura" type="Control" parent="."]
 anchors_preset = 0
@@ -727,7 +885,5 @@ libraries = {
 [node name="CameraAbertura" type="Camera2D" parent="UI-Abertura"]
 position = Vector2(576, 324)
 
-[connection signal="toggled" from="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" to="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" method="Toggle"]
+[connection signal="toggled" from="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" to="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" method="_on_toggled"]
 [connection signal="pressed" from="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/tela-informacoes" to="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/tela-informacoes" method="_on_pressed"]
-[connection signal="toggled" from="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" to="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" method="Toggle"]
-[connection signal="pressed" from="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3/informacao-tela" to="UI-Informacoes/cabeca/Panel/HBoxContainer/HBoxContainer3/informacao-tela" method="_on_pressed"]

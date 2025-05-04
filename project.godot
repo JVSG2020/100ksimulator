@@ -13,14 +13,18 @@ config_version=5
 config/name="100ksimulator"
 run/main_scene="uid://cfxybseexbl31"
 config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="uid://f6kv62cqlpri"
 
 [autoload]
 
-SignalManeger="*res://Scripts/singletons/signal_maneger.gd"
+SignalManeger="*res://Scripts/Sinais/signalcreator.gd"
 
 [display]
 
-window/stretch/mode="viewport"
+window/size/mode=3
+window/size/resizable=false
+window/size/borderless=true
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
