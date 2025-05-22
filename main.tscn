@@ -31,7 +31,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y5iv"]
-bg_color = Color(0.180392, 0.184314, 0.247059, 1)
+bg_color = Color(0.0705882, 0.0823529, 0.113725, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_io28c"]
 
@@ -720,6 +720,12 @@ offset_top = 1412.0
 offset_right = 1152.0
 offset_bottom = 2060.0
 
+[node name="ColorRect" type="ColorRect" parent="UI-Arquivos"]
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.117647, 0.121569, 0.184314, 1)
+
 [node name="Screenshot2" type="Sprite2D" parent="UI-Arquivos"]
 position = Vector2(576, 324.5)
 scale = Vector2(0.844, 0.845)
@@ -838,6 +844,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="UI-Arquivos/cabeca/Panel/HBoxContainer/HBoxContainer3"]
 layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI-Arquivos"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+offset_left = 16.0
+offset_top = 94.0
+offset_right = 66.0
+offset_bottom = 144.0
+scale = Vector2(22.3777, 10.5615)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7y5iv")
 
 [node name="UI-Abertura" type="Control" parent="."]
 anchors_preset = 0
