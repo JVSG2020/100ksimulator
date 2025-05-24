@@ -4,6 +4,7 @@ extends Control
 
 
 func _ready():
+	$Open.play()
 	$CameraAbertura.make_current()
 	animation_intro.play("Black_in")
 	get_tree().create_timer(3).timeout.connect(black_out)

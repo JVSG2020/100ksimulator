@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cfxybseexbl31"]
+[gd_scene load_steps=24 format=3 uid="uid://cfxybseexbl31"]
 
 [ext_resource type="Script" uid="uid://cybxik6ie6di2" path="res://Scripts/mainscript.gd" id="1_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bes41m3nm8u4a" path="res://Screenshot_1.png" id="1_272bh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dtw56ea6ym5gs" path="res://Scripts/ram.gd" id="5_efxa6"]
 [ext_resource type="Script" uid="uid://m3ce1m7uqnow" path="res://Scripts/regs.gd" id="6_dg77c"]
 [ext_resource type="Texture2D" uid="uid://bo852ml0mw1n6" path="res://Screenshot_2.png" id="8_kek77"]
+[ext_resource type="AudioStream" uid="uid://dncp5vf1awwtd" path="res://sound/open.mp3" id="9_4c57u"]
 [ext_resource type="Script" uid="uid://bupp7q04bjqw1" path="res://Scripts/ui_abertura.gd" id="9_kek77"]
 
 [sub_resource type="Theme" id="Theme_8we33"]
@@ -721,6 +722,7 @@ offset_right = 1152.0
 offset_bottom = 2060.0
 
 [node name="ColorRect" type="ColorRect" parent="UI-Arquivos"]
+layout_mode = 0
 offset_top = 2.0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -848,6 +850,7 @@ layout_mode = 2
 [node name="Panel" type="Panel" parent="UI-Arquivos"]
 visible = false
 custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
 offset_left = 16.0
 offset_top = 94.0
 offset_right = 66.0
@@ -900,6 +903,10 @@ libraries = {
 
 [node name="CameraAbertura" type="Camera2D" parent="UI-Abertura"]
 position = Vector2(576, 324)
+
+[node name="Open" type="AudioStreamPlayer2D" parent="UI-Abertura"]
+position = Vector2(-779, 1440)
+stream = ExtResource("9_4c57u")
 
 [connection signal="toggled" from="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" to="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" method="_on_toggled"]
 [connection signal="pressed" from="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/tela-informacoes" to="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/tela-informacoes" method="_on_pressed"]
