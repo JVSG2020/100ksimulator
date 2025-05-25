@@ -60,7 +60,6 @@ func _process(_delta):
 	# Teste
 	if Input.is_action_just_pressed("ui_down") and curscene == "info":
 		ramload(0,get_address(0) + 5)
-	
 
 # Função para modificar uma Memória
 func ramload(m,n):

@@ -1,14 +1,18 @@
-[gd_scene load_steps=24 format=3 uid="uid://cfxybseexbl31"]
+[gd_scene load_steps=28 format=3 uid="uid://cfxybseexbl31"]
 
 [ext_resource type="Script" uid="uid://cybxik6ie6di2" path="res://Scripts/mainscript.gd" id="1_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bes41m3nm8u4a" path="res://Screenshot_1.png" id="1_272bh"]
 [ext_resource type="Texture2D" uid="uid://f6kv62cqlpri" path="res://icon_100.png" id="2_5vw27"]
+[ext_resource type="Script" uid="uid://bs2hgjt8y32b2" path="res://Scripts/Botoes/start.gd" id="3_efxa6"]
 [ext_resource type="Texture2D" uid="uid://banjf0uu0qxlr" path="res://Screenshot_3.png" id="4_4c57u"]
+[ext_resource type="Script" uid="uid://b1odcltnmwioo" path="res://Scripts/Botoes/step.gd" id="4_dg77c"]
 [ext_resource type="Script" uid="uid://dtw56ea6ym5gs" path="res://Scripts/ram.gd" id="5_efxa6"]
+[ext_resource type="Script" uid="uid://ckdrcxp7uydsu" path="res://Scripts/Textos/label.gd" id="5_w48qg"]
 [ext_resource type="Script" uid="uid://m3ce1m7uqnow" path="res://Scripts/regs.gd" id="6_dg77c"]
 [ext_resource type="Texture2D" uid="uid://bo852ml0mw1n6" path="res://Screenshot_2.png" id="8_kek77"]
 [ext_resource type="AudioStream" uid="uid://dncp5vf1awwtd" path="res://sound/open.mp3" id="9_4c57u"]
 [ext_resource type="Script" uid="uid://bupp7q04bjqw1" path="res://Scripts/ui_abertura.gd" id="9_kek77"]
+[ext_resource type="Script" uid="uid://b88tpg52osxpp" path="res://Scripts/assembly.gd" id="10_4c57u"]
 
 [sub_resource type="Theme" id="Theme_8we33"]
 
@@ -32,7 +36,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y5iv"]
-bg_color = Color(0.0705882, 0.0823529, 0.113725, 1)
+bg_color = Color(0.180392, 0.184314, 0.247059, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_io28c"]
 
@@ -146,16 +150,17 @@ offset_right = 1005.0
 offset_bottom = 335.0
 theme_override_font_sizes/font_size = 11
 text = "Start"
+script = ExtResource("3_efxa6")
 metadata/_edit_use_anchors_ = true
 
-[node name="Stop" type="Button" parent="UI-Tela"]
+[node name="Reset" type="Button" parent="UI-Tela"]
 layout_mode = 0
 offset_left = 1014.0
 offset_top = 301.0
 offset_right = 1065.0
 offset_bottom = 335.0
 theme_override_font_sizes/font_size = 11
-text = "Stop"
+text = "Reset"
 metadata/_edit_use_anchors_ = true
 
 [node name="Step" type="Button" parent="UI-Tela"]
@@ -166,6 +171,7 @@ offset_right = 1124.0
 offset_bottom = 335.0
 theme_override_font_sizes/font_size = 11
 text = "Step"
+script = ExtResource("4_dg77c")
 metadata/_edit_use_anchors_ = true
 
 [node name="ControlW" type="Panel" parent="UI-Tela"]
@@ -190,6 +196,39 @@ offset_right = 60.0
 offset_bottom = 31.0
 theme_override_font_sizes/font_size = 12
 text = "W"
+metadata/_edit_use_anchors_ = true
+
+[node name="InstrucaoTxt" type="Label" parent="UI-Tela"]
+layout_mode = 0
+offset_left = 948.0
+offset_top = 144.0
+offset_right = 1127.0
+offset_bottom = 167.0
+text = "Executando Instrução:"
+
+[node name="Instrucao" type="Panel" parent="UI-Tela"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0632813
+anchor_top = -0.280864
+anchor_right = 0.0539062
+anchor_bottom = -0.280864
+offset_left = 1016.9
+offset_top = 352.0
+offset_right = 1066.9
+offset_bottom = 386.0
+theme = SubResource("Theme_8we33")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UI-Tela/Instrucao"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 12
+text = "NOP"
+script = ExtResource("5_w48qg")
 metadata/_edit_use_anchors_ = true
 
 [node name="ControlA" type="Panel" parent="UI-Tela"]
@@ -271,17 +310,7 @@ offset_top = 226.0
 offset_right = 1086.0
 offset_bottom = 249.0
 theme_override_font_sizes/font_size = 14
-text = "Instruções por Segundo"
-metadata/_edit_use_anchors_ = true
-
-[node name="InstrucoesdoPC" type="Label" parent="UI-Tela"]
-layout_mode = 0
-offset_left = 944.0
-offset_top = 169.0
-offset_right = 1087.0
-offset_bottom = 192.0
-theme_override_font_sizes/font_size = 15
-text = "Instrução do PC: 0"
+text = "Instruções por 30 Segundos"
 metadata/_edit_use_anchors_ = true
 
 [node name="Rate" type="Label" parent="UI-Tela"]
@@ -301,7 +330,7 @@ offset_top = 243.0
 offset_right = 1132.0
 offset_bottom = 259.0
 min_value = 1.0
-max_value = 10000.0
+max_value = 4000.0
 value = 400.0
 metadata/_edit_use_anchors_ = true
 
@@ -907,6 +936,12 @@ position = Vector2(576, 324)
 [node name="Open" type="AudioStreamPlayer2D" parent="UI-Abertura"]
 position = Vector2(-779, 1440)
 stream = ExtResource("9_4c57u")
+
+[node name="Assembly" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_4c57u")
 
 [connection signal="toggled" from="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" to="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/FullscreenSetting" method="_on_toggled"]
 [connection signal="pressed" from="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/tela-informacoes" to="UI-Tela/cabeca/Panel/HBoxContainer/HBoxContainer3/tela-informacoes" method="_on_pressed"]

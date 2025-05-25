@@ -8,8 +8,10 @@ var regcount = 32;
 var regid = array_create(regcount,-1)
 # Lista dos números armazendos
 var reglist = array_create(regcount,0)
-# Nos dize qual "cena" nós estamos
+# Nos diz qual "cena" nós estamos
 var curscene = "tela" # tela, info, arq
+# Uma variável para configurar um valor de um registrador [Reg, Numb]
+var loader = [0,0]
 
 func array_create(sz, value):
 	var arr = []
@@ -51,12 +53,16 @@ func _ready():
 		label.position = Vector2(18, 8)
 		regid[indexreg].add_child(label)
 		indexreg += 1
+	
+	if not SignalManeger.loadreg.is_connected(regdef):
+		SignalManeger.loadreg.connect(regdef)
 
 func _process(_delta):
 	# Detectores de "Cena"
 	SignalManeger.cam_tela.connect(func(): curscene = "tela") # Tela
 	SignalManeger.cam_info.connect(func(): curscene = "info") # Informações
 	SignalManeger.cam_arq.connect(func(): curscene = "arq") # Arquivos
+	
 	# Um teste
 	if Input.is_action_just_pressed("ui_up") and curscene == "info":
 		regload(1,get_register(1) + 3)
@@ -74,3 +80,6 @@ func regload(r,n):
 # Função para retornar um registrador
 func get_register(r):
 	return reglist[r]
+
+func regdef():
+	regload(loader[0],loader[1])
